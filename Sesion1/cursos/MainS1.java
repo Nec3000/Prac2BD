@@ -1,9 +1,11 @@
 package cursos;
 
+import java.sql.SQLException;
+
 public class MainS1 {
 
     // Comprobar
-    public static void test() {
+    public static void test() throws SQLException{
         // Crea el gestor de conexiones
         BBDDManager cm = new BBDDManager("alumno","bbdd-upm");
 
@@ -18,7 +20,7 @@ public class MainS1 {
         System.out.println(result);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         test();
     }
 }

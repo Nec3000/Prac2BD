@@ -1,6 +1,8 @@
 
 package cursos;
 
+import java.util.ArrayList;
+
 /**
  * Hay que usar esta clase para guardar los mensajes
  * que se puedan producir en BBDDManager.
