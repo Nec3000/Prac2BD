@@ -12,5 +12,5 @@ import java.util.ArrayList;
  * result.add("SQL:" + e.getMessage() + ";");
  * return result;
  */
-public class StringWriter extends ArrayList<String> {
+public class StringWriter extends ArrayList<String>{
 }

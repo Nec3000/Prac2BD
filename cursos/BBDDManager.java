@@ -19,12 +19,17 @@ public class BBDDManager {
         return "jdbc:mysql://" + host + "/" + db;
     }
 
-    public StringWriter run(DataBaseTask[] tasks, String[] dataArray, boolean autoCommit) throws SQLException,BBDDException {
+    public StringWriter run(DataBaseTask[] tasks, String[] dataArray, boolean autoCommit)  throws SQLException {
         StringWriter result = new StringWriter();
-        conn = DriverManager.getConnection(url(),user,password);
-        conn.setAutoCommit(autoCommit);
-        tasks[0].run(conn,"");
+        try {
+            conn = DriverManager.getConnection(url(), user, password);
+            conn.setAutoCommit(autoCommit);
+            for (DataBaseTask task : tasks) {
+                task.run(conn, "");
+            }
 
+        } catch (Exception e) {
+        }
         result.add("fin");
         return result;
     }
