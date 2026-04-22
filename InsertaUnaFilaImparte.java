@@ -8,7 +8,7 @@ public class InsertaUnaFilaImparte implements DataBaseTask {
     @Override
     public void run(Connection conn, String data)throws BBDDException, SQLException {
         String[] datos = data.split(",");
-        PreparedStatement psI= conn.prepareStatement("INSERT INTO IMPARTE(profesor_id , curso_id , n_modulo , aula_id , fecha) VALUES (?,?,?,?,?)");
+        PreparedStatement psI= conn.prepareStatement("INSERT INTO imparte(profesor_id , curso_id , n_modulo , aula_id , fecha) VALUES (?,?,?,?,?)");
 
         psI.setInt(1,Integer.parseInt(datos[0].trim()));
         psI.setInt(2,Integer.parseInt(datos[1].trim()));
